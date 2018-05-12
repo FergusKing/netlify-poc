@@ -10,7 +10,15 @@
 </head>
 <body>
   <h1>
-    {{data.fields.heading}}
+    {{#if data.fields.heading}}
+      <h1>{{data.fields.heading}}</h1>
+    {{/if}}
+    {{#if data.fields.sub_heading}}
+      <h2>{{data.fields.sub_heading}}</h2>
+    {{/if}}
+    {{#if data.fields.content}}
+      {{data.fields.content}}
+    {{/if}}
   </h1>
 </body>
 </html>
