@@ -1,0 +1,29 @@
+{
+  "name": "netlify-poc",
+  "version": "1.0.0",
+  "description": "First forey into static sites with a headless CMS",
+  "main": "build.js",
+  "scripts": {
+    "start": "nodemon build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FergusKing/netlify-poc.git"
+  },
+  "author": "Fergus King",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FergusKing/netlify-poc/issues"
+  },
+  "homepage": "https://github.com/FergusKing/netlify-poc#readme",
+  "dependencies": {
+    "contentful-metalsmith": "^0.11.0",
+    "dot-env": "0.0.1",
+    "metalsmith": "^2.3.0",
+    "metalsmith-assets": "^0.1.0",
+    "metalsmith-data-markdown": "0.0.3",
+    "metalsmith-markdown": "^0.2.2",
+    "metalsmith-templates": "^0.7.0"
+  }
+}
