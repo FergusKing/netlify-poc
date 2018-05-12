@@ -4,8 +4,7 @@ const templates = require('metalsmith-templates')
 const markdown = require('metalsmith-markdown')
 const dataMarkdown = require('metalsmith-data-markdown')
 const contentful = require('contentful-metalsmith')
-
-
+require('dotenv').config()
 
 metalsminth(__dirname)
     .source('src')
@@ -18,7 +17,7 @@ metalsminth(__dirname)
     )
     .use(
         templates({
-            engine: "jade"
+            engine: 'pug'
         })
     )
     .use(markdown())
