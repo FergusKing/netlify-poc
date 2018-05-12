@@ -5,8 +5,11 @@
   "main": "build.js",
   "scripts": {
     "start": "nodemon build.js",
+    "dev": "run-p watch serve",
     "production": "node build.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "live-server ./build",
+    "watch": "gazer --pattern '{src,layouts,helpers,partials}/**/*' node build.js"
   },
   "repository": {
     "type": "git",
