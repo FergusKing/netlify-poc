@@ -9,7 +9,7 @@
     "production": "node build.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "live-server ./build",
-    "watch": "gazer --pattern '{src,layouts,helpers,partials}/**/*' node build.js"
+    "watch": "nodemon build.js"
   },
   "repository": {
     "type": "git",
