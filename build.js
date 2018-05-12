@@ -29,6 +29,10 @@ Metalsmith(__dirname)
     source: 'assets/',
     destination: 'assets/'
   }))
+  .use(assets({
+    source: 'root-assets/',
+    destination: ''
+  }))
   .use(markdown())
   .use(dataMarkdown({
     removeAttributeAfterwards: true
