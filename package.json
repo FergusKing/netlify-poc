@@ -5,6 +5,7 @@
   "main": "build.js",
   "scripts": {
     "start": "nodemon build.js",
+    "production": "node build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
