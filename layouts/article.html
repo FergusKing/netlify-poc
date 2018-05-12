@@ -17,7 +17,9 @@
       <h2>{{data.fields.subHeading}}</h2>
     {{/if}}
     {{#if data.fields.content}}
-      {{data.fields.content}}
+        <div class="panel__content" data-markdown>
+          {{data.fields.content}}
+        </div>
     {{/if}}
   </h1>
 </body>
