@@ -4,7 +4,6 @@
   "description": "First forey into static sites with a headless CMS",
   "main": "build.js",
   "scripts": {
-    "start": "nodemon build.js",
     "dev": "run-p watch serve",
     "production": "node build.js",
     "test": "echo \"Error: no test specified\" && exit 1",
