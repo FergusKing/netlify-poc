@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title>Test Dash</title>
+        <style>
+            body{
+                width:1700px;
+                height:960px;
+                border:0;
+                padding:0;
+                margin:0;
+                overflow:hidden;
+                position: relative;
+            }
+            .slide{
+                width:1700px;
+                height:960px;
+                overflow: hidden;
+                opacity:0;
+                position: absolute;
+                top: 0;
+                right: 0;
+                transition: ease 1s;
+            }
+            .slide__cont{
+                width:100%;
+                height:100%;
+            }
+            .slide--active{
+                display:block;
+                opacity:1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="slide slide--active">
+            <iframe class="slide__cont" style="width:100%; height:100%" frameborder="0"  src="https://dub01.online.tableau.com/t/reportinganalysis/views/TableauReportforScreen/HighLevelData?:embed=y&:showShareOptions=true&:display_count=no&:showVizHome=no">
+            </iframe>
+        </div>
+        <div class="slide">
+            <iframe class="slide__con" style="width:100%; height:100%" frameborder="0"  src="https://dub01.online.tableau.com/t/reportinganalysis/views/TableauReportforScreen/ChannelShift?:embed=y&:showShareOptions=true&:display_count=no&:showVizHome=no">
+            </iframe>
+        </div>
+        <div class="slide">
+            <iframe class="slide__con" style="width:100%; height:100%" frameborder="0"  src="https://dub01.online.tableau.com/t/reportinganalysis/views/TableauReportforScreen/AccountManagement?:embed=y&:showShareOptions=true&:display_count=no&:showVizHome=no">
+            </iframe>
+        </div>
+        <div class="slide">
+            <iframe class="slide__con" style="width:100%; height:100%" frameborder="0"  src="https://dub01.online.tableau.com/t/reportinganalysis/views/TableauReportforScreen/Acquisition?:embed=y&:showShareOptions=true&:display_count=no&:showVizHome=no">
+            </iframe>
+        </div>
+
+        <script>
+            var h = {
+                islast: function(el, sel){
+                    if(el.nextElementSibling !== null){
+                    if(el.nextElementSibling.matches(sel)){
+                        return false;
+                    };
+                    };
+                    return true;
+                },
+                isfirst: function(el, sel){
+                    if(el.previousElementSibling !== null){
+                    if(el.previousElementSibling.matches(sel)){
+                        return false;
+                    };
+                    };
+                    return true;
+                },
+                first: function(sel){
+                    return document.querySelector(sel);
+                },
+                last: function(sel){
+                    return document.querySelector(sel+':last-child');
+                },
+                closest:function(el, selector){
+                    while (el.matches && !el.matches(selector)) el = el.parentNode;
+                    return el.matches ? el : null;
+                }
+            }
+            var timer = null;
+            window.onload = function(){
+                startTimer()
+                
+            }
+            function startTimer(){
+                timer = setTimeout(nextSlide, 6000);
+            }
+            function nextSlide(){
+                var cur = document.querySelector('.slide--active')
+                if(h.islast(cur,'.slide')){
+                    h.first('.slide').className += ' slide--active';
+                }else{
+                    cur.nextElementSibling.className += ' slide--active';
+                }
+                cur.className = cur.className.replace(/\b slide--active\b/g, "");
+                startTimer()
+            }
+        </script>
+    </body>
+</html>
